@@ -35,6 +35,8 @@ void RemoveFixUp(Pagina *p, Pagina *pai, int PosPai, int *underflow);
 void Antecessor(Pagina *p, int i, Pagina *pai, int *underflow);
 void Remove(Pagina **p, int key, int *underflow);
 
+void Retira(Pagina **p, int key);
+
 void Imprime(Pagina **p, int level);
 
 #endif

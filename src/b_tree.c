@@ -269,7 +269,7 @@ void Retira(Pagina **p, int key){
 
   Remove(p, key, &underflow);
   
-  if (underflow && (*p)->n == 0){ /* Arvore diminui na altura */
+  if (underflow && (*p)->n == 0){
     aux = *p;   
     *p = aux->p[0]; 
     free(aux);
@@ -290,4 +290,17 @@ void Imprime(Pagina **p, int level){
 
   for (i = 0; i <= (*p)->n; i++)
     Imprime(&(*p)->p[i], level);
+}
+
+void Remove_2(Pagina **p, int key){
+  int underflow;
+  Pagina *aux;
+
+  Remove(p, key, &underflow);
+
+  if(underflow && (*p)->n == 0){
+    aux = *p;
+    *p = aux->p[0];
+    free(aux);
+  }
 }

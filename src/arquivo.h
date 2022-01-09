@@ -7,10 +7,14 @@
 
 #include "b_tree.h"
 
+#define subArquivos "src/files/clientes/"
+
 #define TRUE 1
 #define FALSE 0
 
-void leArquivo1();
+void leArquivo();
 void insereArvore();
+void pesquisa_arvore();
+void imprime_arvore();
 
 #endif

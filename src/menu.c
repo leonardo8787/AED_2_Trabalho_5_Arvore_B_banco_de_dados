@@ -32,22 +32,22 @@ void menu(){
                 break;
             case 1:
                 printf("Printando árvore\n");
-                Imprime(&btree, 0);
-                 break;
+                imprime_arvore();
+                break;
             case 2:
                 printf("lendo arquivo\n");
-                leArquivo1();
+                leArquivo();
                 break;
             case 3:
                 printf("Pesquisar\n");
-                /*Imprime(&btree, 0);*/
+                pesquisa_arvore();
                 break;
             case 4:
                 printf("limpando telaz\n");
                 system("cls");
                 break;
             case 5:
-            	printf("Inserindo elementos na árvore");
+            	printf("Inserindo elementos na árvore\n");
             	insereArvore();
             	break;
             default:

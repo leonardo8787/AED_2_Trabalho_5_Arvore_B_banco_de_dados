@@ -4,8 +4,8 @@
 #include<stdlib.h>
 #include<stdio.h>
 
-#define M 2
-#define MM (M * 2)
+#define M 1
+#define MM (M * 3)
 
 #define FALSE 0
 #define TRUE  1

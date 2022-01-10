@@ -30,6 +30,7 @@ void menu(Pagina *btree){
         printf("8 - Imprimir árvore\n");
         printf("9 - Remover informação da árvore\n");
         printf("10 - Limpar tela\n");
+        printf("11 - gera valores aleatórios\n");
         scanf("%d", &op);
         switch(op){
             case 0:
@@ -49,11 +50,12 @@ void menu(Pagina *btree){
                 break;
             case 4:
                 printf("inserir elementos do arquivo na árvore\n");
-                insereArvore(btree);
+                insereArvore(&btree);
+                if (btree == NULL) printf("\nponteiro nulo\n");
                 break;
             case 5:
                 printf("inserir elementos aleatórios na árvore\n");
-                insere_na_mao(btree);
+                insere_na_mao(&btree);
                 break;
             case 6:
                 printf("Pesquisar elementos pré-definidos na árvore\n");
@@ -61,6 +63,7 @@ void menu(Pagina *btree){
                 break;
             case 7:
                 printf("Pesquisar elementos aleatórios na árvore\n");
+                pesquisa_arvore(btree);
                 break;
             case 8:
                 printf("Imprimir árvore\n");
@@ -73,6 +76,9 @@ void menu(Pagina *btree){
             case 10:
                 printf("Limpar tela\n");
                 system("cls");
+                break;
+            case 11:
+                gera_mil_aleatorios();
                 break;
             default:
                 printf("Digite uma opção válida!\n");

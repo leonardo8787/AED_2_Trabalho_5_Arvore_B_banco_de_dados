@@ -9,7 +9,7 @@ void Pesquisa(Pagina *p, Record *r){
   short i = 1;
 
   if(p == NULL){
-    //printf("[ERROR]: Node not found!");
+    printf("[ERROR]: Node not found!");
     return;
   }
 
@@ -20,12 +20,14 @@ void Pesquisa(Pagina *p, Record *r){
     return;
   }
 
-  if (r->key < p->r[i-1].key) 
+  if (r->key < p->r[i-1].key) {
     Pesquisa(p->p[i-1], r);
-  else 
+    printf("\nencontrou!\n");
+  }else{ 
     Pesquisa(p->p[i], r);
+    printf("\nencontrou!\n");
+  }
 } 
-
 
 void InsereNaPagina(Pagina *p, Pagina *pdir, Record r){ 
   short IsNotPosition;
@@ -108,7 +110,6 @@ void InsertFixUp(Pagina **p, Pagina **pr, Record r, Record *rr, short *Overflow)
   *rr = (*p)->r[M];  
   *pr = paux;
 }
-
 
 //Cap 18. página 357
 void Insere(Pagina **p, Record r){ 

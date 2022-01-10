@@ -15,12 +15,12 @@
 void leArquivo();
 void leArquivo_tokenizado_nomes();
 void leArquivo_tokenizado_cpfs();
-void insereArvore(Pagina *btree);
-void insere_na_mao(Pagina *btree);
-// void insere_na_mao_2(Pagina *btree);
+void insereArvore(Pagina **btree);
+void insere_na_mao(Pagina **btree);
 void pesquisa_arvore(Pagina *btree);
 void imprime_arvore(Pagina *btree);
 void tokenizar_nomes(char *str);
 void excluir(Pagina *btree);
+void gera_mil_aleatorios();
 
 #endif

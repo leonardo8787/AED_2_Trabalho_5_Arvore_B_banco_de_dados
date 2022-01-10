@@ -82,10 +82,20 @@ void leArquivo_tokenizado_cpfs(){
   fclose(arq1);
 }
 
-void insereArvore(Pagina *btree){
+void insereArvore(Pagina **btree){
 
 	FILE *arq;
-	arq = fopen("src/arquivos/clientes_1.txt", "r");
+	FILE *arq1, *arq2, *arq3, *arq4, *arq5, *arq6, *arq7, *arq8, *arq9, *arq10;
+	arq1 = fopen("src/arquivos/subArquivos/1125480-112647944.txt", "r");
+	arq2 = fopen("src/arquivos/subArquivos/112964288-203548224.txt", "r");
+	arq3 = fopen("src/arquivos/subArquivos/204328608-304295168.txt", "r");
+	arq4 = fopen("src/arquivos/subArquivos/304955680-412482592.txt", "r");
+	arq5 = fopen("src/arquivos/subArquivos/413077824-525747136.txt", "r");
+	arq6 = fopen("src/arquivos/subArquivos/525995360-621822848.txt", "r");
+	arq7 = fopen("src/arquivos/subArquivos/622095488-699075392.txt", "r");
+	arq8 = fopen("src/arquivos/subArquivos/699787136-799645696.txt", "r");
+	arq9 = fopen("src/arquivos/subArquivos/801896704-891529472.txt", "r");
+	arq10 = fopen("src/arquivos/subArquivos/892323776-999993536.txt", "r");
 
 	Record r;
 
@@ -93,104 +103,157 @@ void insereArvore(Pagina *btree){
   char Linha[1000];
   char *result;
 
-	if(arq == NULL)
+	if(arq1 == NULL)
 		printf("Erro ao abrir\n");
 	else {
-		while(!feof(arq)) {
-			result = fgets(Linha, 50, arq);
+		while(!feof(arq1)) {
+			result = fgets(Linha, 50, arq1);
 		 	if(result){
 			  r.key = atoi(Linha);
-				Insere(&btree, r);
+				Insere(btree, r);
 		 	}
 		}
 	}
-	imprime_arvore(btree);
-	fclose(arq);
+
+	if(arq2 == NULL)
+		printf("Erro ao abrir\n");
+	else {
+		while(!feof(arq2)) {
+			result = fgets(Linha, 50, arq2);
+		 	if(result){
+			  r.key = atoi(Linha);
+				Insere(btree, r);
+		 	}
+		}
+	}
+
+	if(arq3 == NULL)
+		printf("Erro ao abrir\n");
+	else {
+		while(!feof(arq3)) {
+			result = fgets(Linha, 50, arq3);
+		 	if(result){
+			  r.key = atoi(Linha);
+				Insere(btree, r);
+		 	}
+		}
+	}
+
+	if(arq4 == NULL)
+		printf("Erro ao abrir\n");
+	else {
+		while(!feof(arq4)) {
+			result = fgets(Linha, 50, arq4);
+		 	if(result){
+			  r.key = atoi(Linha);
+				Insere(btree, r);
+		 	}
+		}
+	}
+
+	if(arq5 == NULL)
+		printf("Erro ao abrir\n");
+	else {
+		while(!feof(arq5)) {
+			result = fgets(Linha, 50, arq5);
+		 	if(result){
+			  r.key = atoi(Linha);
+				Insere(btree, r);
+		 	}
+		}
+	}
+
+	if(arq6 == NULL)
+		printf("Erro ao abrir\n");
+	else {
+		while(!feof(arq6)) {
+			result = fgets(Linha, 50, arq6);
+		 	if(result){
+			  r.key = atoi(Linha);
+				Insere(btree, r);
+		 	}
+		}
+	}
+
+	if(arq7 == NULL)
+		printf("Erro ao abrir\n");
+	else {
+		while(!feof(arq7)) {
+			result = fgets(Linha, 50, arq7);
+		 	if(result){
+			  r.key = atoi(Linha);
+				Insere(btree, r);
+		 	}
+		}
+	}
+
+	if(arq8 == NULL)
+		printf("Erro ao abrir\n");
+	else {
+		while(!feof(arq8)) {
+			result = fgets(Linha, 50, arq8);
+		 	if(result){
+			  r.key = atoi(Linha);
+				Insere(btree, r);
+		 	}
+		}
+	}
+
+	if(arq9 == NULL)
+		printf("Erro ao abrir\n");
+	else {
+		while(!feof(arq9)) {
+			result = fgets(Linha, 50, arq9);
+		 	if(result){
+			  r.key = atoi(Linha);
+				Insere(btree, r);
+		 	}
+		}
+	}
+
+	if(arq10 == NULL)
+		printf("Erro ao abrir\n");
+	else {
+		while(!feof(arq10)) {
+			result = fgets(Linha, 50, arq10);
+		 	if(result){
+			  r.key = atoi(Linha);
+				Insere(btree, r);
+		 	}
+		}
+	}
+
+	fclose(arq1);
+	fclose(arq2);
+	fclose(arq3);
+	fclose(arq4);
+	fclose(arq5);
+	fclose(arq6);
+	fclose(arq7);
+	fclose(arq8);
+	fclose(arq9);
+	fclose(arq10);
 }
 
-void insere_na_mao(Pagina *btree){
-
-	FILE *arq;
-	arq = fopen("src/arquivos/subArquivos/arquivo1.txt", "wr");
+void insere_na_mao(Pagina **btree){
 
 	Record r;
-  int ordem = 2;
-  char Linha[100];
-  char *result;
-  char *palavra;
+  int cpf;
 
   printf("Digite o cpf seguido do nome e por fim a idade do indivíduo!\n");
-  scanf("%s", palavra);
-  fputs(palavra, arq);
-
-  if(arq != NULL){
-  	printf("arquivo escrito com sucesso!");
-  }
-
-	if(arq == NULL)
-		printf("Erro ao abrir\n");
-	else {
-		while(!feof(arq)) {
-			result = fgets(Linha, 50, arq);
-		 	if(result){
-			  r.key = atoi(Linha);
-				Insere(&btree, r);
-		 	}
-		}
-	}
-	imprime_arvore(btree);
-
-	fclose(arq);
+  scanf("%d", &cpf);
+	r.key = cpf;
+	Insere(btree, r);
 }
 
-// void insere_na_mao_2(Pagina *btree){
-// 	FILE *arq;
-// 	arq = fopen("src/arquivos/subArquivos/arquivo1.txt", "r");
-
-// 	Record r;
-
-//   int ordem = 2;
-//   char Linha[100];
-//   char *result;
-
-// 	if(arq == NULL)
-// 		printf("Erro ao abrir\n");
-// 	else {
-// 		while(!feof(arq)) {
-// 			result = fgets(Linha, 50, arq);
-// 		 	if(result){
-// 			  r.key = atoi(Linha);
-// 				Insere(&btree, r);
-// 		 	}
-// 		}
-// 	}
-// 	imprime_arvore(btree);
-
-// 	fclose(arq);
-// }
-
 void pesquisa_arvore(Pagina *btree){
-	FILE *arq;
-	arq = fopen("src/arquivos/clientes_2.txt", "r");
-
 	Record r;
+	int cpf;
 
-  int ordem = 2;
-  char Linha[1000];
-  char *result;
-
-	if(arq == NULL)
-		printf("Erro ao abrir\n");
-	else {
-		while(!feof(arq)) {
-			result = fgets(Linha, 50, arq);
-		 	if(result){
-			  r.key = atoi(Linha);
-				Pesquisa(btree, &r);
-		 	}
-		}
-	}
-	fclose(arq);
+	printf("Digite o cpf a ser procurado: \n");
+	scanf("%d", &cpf);
+	r.key = cpf;
+	Pesquisa(btree, &r);
 }
 
 void imprime_arvore(Pagina *btree){
@@ -223,3 +286,68 @@ void excluir(Pagina *btree){
 	printf("\ncomo ficou: \n");
 	imprime_arvore(btree);
 }
+
+void gera_mil_aleatorios(){
+
+	int arq_1[1000];
+	char array_1[1000];
+	FILE *file1;
+	file1 = fopen("src/arquivos/arquivo1.txt", "w");
+
+
+	printf("\nPreenchendo arquivo MIL...\n");
+	for(int i=0; i<1000 ; i++){
+		arq_1[i] = 1 + (float)rand() / (float)RAND_MAX *1000000000;
+	    sprintf(array_1, "%.9d", arq_1[i]);
+	    strcat(array_1, ",leonardo,20\n");
+	    fputs(array_1, file1);
+	}
+	fclose(file1);
+}
+
+// void divisor(){
+
+// 	FILE *arquivo;
+// 	arquivo = fopen("src/arquivos/subArquivos/arquivo1.txt", "r");
+// 	int cont=0;
+// 	char *nome[] = "arquivo1";
+// 	char *txt[] = ".txt";
+// 	int teste = 2;
+
+
+// 	if(arq == NULL)
+// 		printf("Erro ao abrir\n");
+// 	else {
+// 		while(!feof(arq)) {
+// 			result = fgets(Linha, 50, arq);
+// 		 	if(result){
+// 			  r.key = atoi(Linha);
+// 				Pesquisa(btree, &r);
+// 		 	}
+// 		}
+// 	}
+
+
+//     ifstream is;
+//     is.open("database.txt");
+//     string line;
+//     int cont=0;
+//     string arquivo = "arquivo";
+//     string txt = ".txt";
+//     int teste = 1;
+//     ofstream myfile(arquivo+to_string(teste)+txt);
+//     myfile.is_open();
+//     while(!is.eof()){
+//         if(cont==100 && teste <10){
+//             cont=0;
+//             teste+=1;
+//             myfile.close();
+//             myfile.open(arquivo+to_string(teste)+txt);
+//         }
+//         getline(is,line);
+//         cout << line << endl;
+//         myfile << line << "\n";
+//         cont+=1;
+//     }
+//     is.close();
+// }

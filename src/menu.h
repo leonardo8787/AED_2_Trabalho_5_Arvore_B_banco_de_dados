@@ -8,6 +8,6 @@
 #include <stdio.h>
 #include <string.h>
 
-void menu();
+void menu(Pagina *btree);
 
 #endif

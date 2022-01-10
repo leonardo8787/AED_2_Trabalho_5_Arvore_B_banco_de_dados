@@ -1,6 +1,8 @@
 #include "menu.h"
 
 int main(){
-    menu();
+	Record r;
+  	Pagina *btree = CreateBTree();
+    menu(btree);
 	return 0;
 }

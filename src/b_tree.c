@@ -9,7 +9,7 @@ void Pesquisa(Pagina *p, Record *r){
   short i = 1;
 
   if(p == NULL){
-    printf("[ERROR]: Node not found!");
+    //printf("[ERROR]: Node not found!");
     return;
   }
 

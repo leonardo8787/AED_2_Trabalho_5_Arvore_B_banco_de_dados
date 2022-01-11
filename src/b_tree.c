@@ -11,6 +11,8 @@ void Pesquisa(Pagina *p, Record *r){
   if(p == NULL){
     printf("[ERROR]: Node not found!");
     return;
+  }else{
+    printf("\nEncontrou!\n");
   }
 
   while (i < p->n && r->key > p->r[i-1].key) i++;
@@ -22,10 +24,8 @@ void Pesquisa(Pagina *p, Record *r){
 
   if (r->key < p->r[i-1].key) {
     Pesquisa(p->p[i-1], r);
-    printf("\nencontrou!\n");
   }else{ 
     Pesquisa(p->p[i], r);
-    printf("\nencontrou!\n");
   }
 } 
 

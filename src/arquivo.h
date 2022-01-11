@@ -22,5 +22,7 @@ void imprime_arvore(Pagina *btree);
 void tokenizar_nomes(char *str);
 void excluir(Pagina *btree);
 void gera_mil_aleatorios();
+void divisor();
+void coloca_nomes();
 
 #endif

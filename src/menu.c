@@ -31,6 +31,7 @@ void menu(Pagina *btree){
         printf("9 - Remover informação da árvore\n");
         printf("10 - Limpar tela\n");
         printf("11 - gera valores aleatórios\n");
+        printf("12 - Mostra arquivos\n");
         scanf("%d", &op);
         switch(op){
             case 0:
@@ -79,6 +80,10 @@ void menu(Pagina *btree){
                 break;
             case 11:
                 gera_mil_aleatorios();
+                break;
+            case 12:
+                printf("Mostra arquivos\n");
+                coloca_nomes();
                 break;
             default:
                 printf("Digite uma opção válida!\n");
